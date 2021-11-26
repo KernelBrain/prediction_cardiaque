@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>kerlan</title>
+</head>
+<body>
+      <div class="container">
+        <form action="{{ url_for('predict')}}" method="post" class="bg-primary m-5 p-5 ">
+         <h1 class="text-center text-white">DETECTION DE LA MALADIE CARDIAQUE</h1>
+         <div class="container text-center alert-danger">
+          {{predict_text}}
+          {{prediction}}
+        </div>
+         {%if erreur%}
+          <div class="container alert-danger text-center">
+            {{erreur}}
+          </div>
+          {%endif%}
+         <div class="row">
+          <div class="col-6 mb-3">
+              <label for="age" class="form-label text-white">AGE:</label>
+              <input id="age" type="number" class="form-control" name="age">
+          </div>
+          <div class="col-6 mb-3">
+              <label for="sexe" class="form-label text-white">Sexe:</label>
+              <select name="sexe" class="form-control" id="sexe">
+                <option ></option>
+                <option value=0>Homme</option>
+                <option value=1>Femme</option>
+              </select>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="tdt" class="form-label text-white">TDT:</label>
+            <select name="tdt" class="form-control" id="sexe">
+              <option ></option>
+              <option value=0>AA</option>
+              <option value=1>ASY</option>
+              <option value=2>AT</option>
+              <option value=3>DNA</option>
+            </select>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="par" class="form-label text-white">PAR:</label>
+            <input id="par" type="number" class="form-control" name="par">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="cholesterol" class="form-label text-white">CHOLESTEROL:</label>
+            <input id="cholesterol" type="number" class="form-control" name="cholesterol">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="gaj" class="form-label text-white">GAJ:</label>
+            <select name="gaj" id="gaj" class="form-control">
+              <option ></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+            </select>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="egg" class="form-label text-white">ECG:</label>
+            <select name="egg" id="egg" class="form-control">
+              <option ></option>
+              <option value=0>LVH</option>
+              <option value=1>NORMAL</option>
+              <option value=2>ST</option>
+            </select>
+          </div>
+          <div class="col-6 mb-3">
+            <label for="fecmax" class="form-label text-white">FCMAX:</label>
+            <input id="fecmax" type="number" class="form-control" name="fecmax">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="angine" class="form-label text-white">ANGINE:</label>
+            <select name="angine" id="angine" class="form-control">
+              <option ></option>
+              <option value=0>0</option>
+              <option value=1>1</option>
+            </select>
+            
+          </div>
+          <div class="col-6 mb-3">
+            <label for="depression" class="form-label text-white">DEPRESSION:</label>
+            <input id="depression" type="number" class="form-control" name="depression">
+          </div>
+          <div class="mb-3">
+            <label for="pente" class="form-label text-white">PENTE:</label>
+            <select name="pente" id="pente" class="form-control">
+              <option ></option>
+              <option value=0>ASCENDANT</option>
+              <option value=1>PLAT</option>
+              <option value=2>DESCENDANT</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-light btn-outline-danger">Submit</button>
+         </div>
+        </form>
+        
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  
+</body>
+</html>
